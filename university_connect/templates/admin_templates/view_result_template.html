@@ -1,0 +1,64 @@
+{% extends 'admin_templates/base_template.html' %}
+
+{% block page_title %}
+    See Results
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Results</h3>
+                        </div>
+
+                        <div class="card-body">
+                        <div class="table-responsive">
+                                <table class="table">
+                                    <thead class="thead-light">
+                                    <tr>
+                                        <th>Student</th>
+                                        <th>Subject</th>
+                                        <th>Assignments Marks</th>
+                                        <th>Exam Marks</th>
+                                        <th>Status</th>
+                                    </tr>
+                                    </thead>
+                                    
+                                    {% for row in results %}
+                                    <tr>
+                                        <td>{{ row.student_id }}</td>
+                                        <td>{{ row.subject_id.subject_name }}</td>
+                                        <td>{{ row.assignment_marks }}</td>
+                                        <td>{{ row.exam_marks }}</td>
+                                        <td>
+                                            {% if row.exam_marks >= 40 and row.assignment_marks >= 10 %}
+                                                <span class="alert alert-success">Pass</span>
+                                            {% else %}
+                                                <span class="alert alert-danger">Fail</span>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /.container-fluid -->
+      </section>
+
+  {% endblock main_content %}
+
+{% block custom_js %}
+
+{% endblock custom_js %}

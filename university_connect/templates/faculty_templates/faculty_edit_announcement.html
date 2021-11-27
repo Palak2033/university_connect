@@ -1,0 +1,44 @@
+{% extends 'faculty_templates/base_template.html' %}
+
+{% block page_title %}
+    Edit Announcement
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Edit Announcement</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    
+                    {% csrf_token %}
+                    <div class="card-body">
+                        <div class="form-group">
+                            <!-- form start -->
+                            {% url 'faculty_edit_announcement_save' as action_path %}
+                            {% include 'faculty_templates/edit_form_template.html' with messages=messages form=form announcement=announcement action_path=action_path button_text="Edit Announcement" %}
+                        </div>
+                    </div>
+
+                    </div>
+                    <!-- /.card -->
+
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+      </section>
+
+  {% endblock main_content %}
+
+{% block custom_js %}
+
+{% endblock custom_js %}

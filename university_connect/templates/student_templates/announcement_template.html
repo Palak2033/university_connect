@@ -1,0 +1,49 @@
+<style>
+    .announcement-wrapper {
+        padding: 12px;
+        color: green;
+    }
+</style>
+
+<div className="announcement-wrapper"
+    style="padding:12px 24px; margin:5px; border: 0.5px solid black; border-radius: 5px;">
+    {% if non_empty %}
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                {% if unread %}
+                    <i class='fas fa-envelope-open' padding=12px>  </i>
+                {% endif %}
+                <h5 class="announcement-faculty-name mt-0 mb-0 mr-1 font-weight-bold">
+                    &nbsp;{{ row.faculty_id.admin.first_name }} {{ row.faculty_id.admin.last_name }}&nbsp;
+                </h5>
+                <h6 class="announcement-subject mb-0 badge badge-primary">
+                    {{ row.subject_id.subject_name }}
+                </h6>
+            </div>
+            <div class="announcement-created-at blockquote-footer">
+                {{ row.created_at }}
+            </div>
+
+        </div>
+
+        <div class="announcement-message-box ml-1"
+            style="font-family: 'Source Sans Pro', sans-serif; font-size: 16px;">
+            <div class="announcement-message">
+                {{ row.message }}
+            </div>
+            {% if row.link != "" %}
+            </br>
+            Link: 
+            <a href={{ row.link }} class=" announcement-message-link">
+                {{ row.link }}
+            </a>
+            {% endif %}
+            {% if row.upload_url != "" %}
+                </br>
+                <a class="btn btn-sm btn-info" href="{{ row.upload_url }}" target="_blank" rel="noopener">{{ row.upload_name }}</a>
+            {% endif %}
+        </div>
+    {% else %}
+        <div><i>No Announcements!</i></div>
+    {% endif %}
+</div>

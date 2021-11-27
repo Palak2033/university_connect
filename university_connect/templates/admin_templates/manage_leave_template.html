@@ -1,0 +1,92 @@
+{% extends 'admin_templates/base_template.html' %}
+
+{% block page_title %}
+    Manage Leave Applications
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Leave Applications</h3>
+                        </div>
+                        <!-- /.card-header -->
+
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>User Type</th>
+                                    <th>Name</th>
+                                    <th>Leave Start Date</th>
+                                    <th>Leave End Date</th>
+                                    <th>Leave Message</th>
+                                    <th>Applied On</th>
+                                    <th>Action</th>
+                                    <th>Remove</th>
+                                </tr>
+                                </thead>
+
+                                {% for leave in leave_reports %}
+                                <tbody>
+                                <tr>
+                                    {% if leave.user.user_type == '2' %}
+                                        <td>Faculty</td>
+                                    {% elif leave.user.user_type == '3' %}
+                                        <td>Student</td>
+                                    {% else %}
+                                        <td>Undefined</td>
+                                    {% endif %}
+                                    <td>{{ leave.user.first_name }} {{ leave.user.last_name }}</td> 
+                                    <td>{{ leave.start_date }}</td>
+                                    <td>{{ leave.end_date }}</td>
+                                    <td>{{ leave.message }}</td>
+                                    <td>{{ leave.created_at }}</td>
+                                    <td>
+                                        {% if leave.status == 0 %}
+                                            <a href="{% url 'change_leave' leave_id=leave.id status=1 %}" class="btn btn-success">Approve</a>
+                                            <a href="{% url 'change_leave' leave_id=leave.id status=2 %}" class="btn btn-danger">Reject</a>
+                                        {% elif leave.status == 1 %}
+                                            <button class="btn btn-warning" disabled="disabled">Approved</button>
+                                            <a href="{% url 'change_leave' leave_id=leave.id status=0 %}" class="btn btn-info">Clear</a>
+                                        {% else %}
+                                            <button class="btn btn-danger" disabled="disabled">Rejected</button>
+                                            <a href="{% url 'change_leave' leave_id=leave.id status=0 %}" class="btn btn-info">Clear</a>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'delete_leave' leave.id %}" class="btn btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                                {% endfor %}
+
+                            </table>
+                        </div>
+                    
+                    </div>
+                    <!-- /.card -->
+
+                </div>
+            </div>
+
+        </div><!-- /.container-fluid -->
+      </section>
+
+
+
+  {% endblock main_content %}
+
+  {% comment %} Custom JS to Identify the Reply and Post Reply {% endcomment %}
+
+  {% block custom_js %}
+
+  {% endblock custom_js %}

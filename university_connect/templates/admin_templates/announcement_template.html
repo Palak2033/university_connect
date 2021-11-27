@@ -1,0 +1,76 @@
+{% extends 'admin_templates/base_template.html' %}
+
+{% block page_title %}
+    Announcements
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Announcements</h3>
+                        </div>
+                        <!-- /.card-header -->
+
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Faculty Name</th>
+                                    <th>Message</th>
+                                    <th>Link</th>
+                                    <th>Attachment</th>
+                                    <th>Created At</th>
+                                    <th>Updated At</th>
+                                    <th>Delete</th>
+                                </tr>
+                                </thead>
+                                
+                                <tbody>
+                                {% if non_empty %}
+                                    {% for row in announcements %}
+                                    <tr>
+                                        <td>{{ row.subject_id.subject_name }}</td>
+                                        <td>{{ row.faculty_id.admin.first_name }} {{ row.faculty_id.admin.last_name }}</td>
+                                        <td>{{ row.message }}</td>
+                                        <td><a href={{ row.link }}>{{ row.link }}</a></td>
+                                        {% if row.upload_url == "" %}
+                                            <td>No attachment</td>
+                                        {% else %}
+                                            <td><a href="{{ row.upload_url }}" target="_blank" rel="noopener">{{ row.upload_name }}</a></td>
+                                        {% endif %}
+                                        <td>{{ row.created_at }}</td>
+                                        <td>{{ row.updated_at }}</td>
+                                        <td>
+                                            <a href="{% url 'admin_delete_announcement' row.id %}" class="btn btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                {% else %}
+                                    <tr>
+                                        <td><i>No announcements!</i></td>
+                                    </tr>
+                                {% endif %}
+                                </tbody>
+
+                            </table>
+                        </div>
+                    
+                    </div>
+                    <!-- /.card -->
+
+                </div>
+            </div>
+
+        </div><!-- /.container-fluid -->
+      </section>
+
+  {% endblock main_content %}

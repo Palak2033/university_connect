@@ -1,0 +1,97 @@
+{% extends 'faculty_templates/base_template.html' %}
+
+{% block page_title %}
+    Announcement
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Send an Announcement</h3>
+                        </div>
+                        <!-- /.card-header -->
+                                
+                        {% csrf_token %}
+                        <div class="card-body">
+                            <div class="form-group">
+                                <!-- form start -->
+                                {% url 'faculty_announcement_save' as action_path %}
+                                {% include 'form_template.html' with messages=messages form=form action_path=action_path button_text="Send Announcement" %}
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+
+                    </div>
+                    <!-- /.card -->
+
+
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-success">
+                        <div class="card-header">
+                            <h3 class="card-title">Announcement History</h3>
+                        </div>
+
+                        <div class="card-body">
+                           <div class="table-responsive">
+                                <table class="table">
+                                    <thead class="thead-light">
+                                    <tr>
+                                        <th>Subject</th>
+                                        <th>Announcement</th>
+                                        <th>Additional Link</th>
+                                        <th>Attachments</th>
+                                        <th>Sent On</th>
+                                        <th>Edit/Delete</th>
+                                        
+                                    </tr>
+                                    </thead>
+                                    
+                                    <tbody>
+                                        {% for row in announcements %}
+                                        <tr>
+                                            <td>{{ row.subject_id.subject_name }}</td>
+                                            <td>{{ row.message }}</td>
+                                            <td><a href="{{ row.link }}">{{ row.link }}</a></td>
+                                            {% if row.upload_url == "" %}
+                                                <td>No attachment</td>
+                                            {% else %}
+                                                <td><a href="{{ row.upload_url }}" target="_blank" rel="noopener">{{ row.upload_name }}</a></td>
+                                            {% endif %}
+                                            <td>{{ row.created_at }}</td>
+                                            <td>
+                                                <a href="{% url 'faculty_edit_announcement' row.id %}" class="btn btn-info">Edit</a>
+                                                <a href="{% url 'faculty_delete_announcement' row.id %}" class="btn btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /.container-fluid -->
+      </section>
+
+  {% endblock main_content %}
+
+{% block custom_js %}
+
+{% endblock custom_js %}

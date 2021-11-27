@@ -1,0 +1,58 @@
+{% extends 'faculty_templates/base_template.html' %}
+
+{% block page_title %}
+    View Subjects
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-success">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Student Details</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body table-responsive p-0">
+                                <table class="table table-hover text-nowrap">
+                                <thead>
+                                    <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Semester</th>
+                                    <th>Course</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for student in students %}
+                                    <tr>
+                                    <td>{{ student }}</td>
+                                    <td>{{ student.admin.email }}</td>
+                                    <td>{{ student.semester_id }}</td>
+                                    <td>{{ student.course_id.course_name }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                    
+                                </tbody>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                            </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /.container-fluid -->
+      </section>
+
+  {% endblock main_content %}
+
+{% block custom_js %}
+
+{% endblock custom_js %}

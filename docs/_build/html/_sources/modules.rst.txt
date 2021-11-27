@@ -1,0 +1,9 @@
+university_connect
+==================
+
+.. toctree::
+   :maxdepth: 4
+
+   core
+   manage
+   university_connect
