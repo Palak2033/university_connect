@@ -3,7 +3,9 @@
 University Connect is a Learning Management System written in Django for the backend and SQLite3 is used for database management. Bootstrap templates and jQuery have been used for the frontend.
 
 The website is deployed on Heroku at: https://university-connect-portal.herokuapp.com/
+
 The documentation for the codebase is deployed at: https://palak2033.github.io/university_connect/
+
 The production code is kept in the stable branch while the documentation code is kept in the docs branch.
 
 In order to run the code locally, you can follow the following steps.
