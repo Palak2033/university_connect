@@ -1,37 +1,13 @@
 university\_connect package
 ===========================
 
-Subpackages
------------
-
-.. toctree::
-   :maxdepth: 4
-
-   university_connect.migrations
-
 Submodules
 ----------
-
-university\_connect.admin module
---------------------------------
-
-.. automodule:: university_connect.admin
-   :members:
-   :undoc-members:
-   :show-inheritance:
 
 university\_connect.admin\_views module
 ---------------------------------------
 
 .. automodule:: university_connect.admin_views
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-university\_connect.apps module
--------------------------------
-
-.. automodule:: university_connect.apps
    :members:
    :undoc-members:
    :show-inheritance:
@@ -88,14 +64,6 @@ university\_connect.student\_views module
 -----------------------------------------
 
 .. automodule:: university_connect.student_views
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-university\_connect.urls module
--------------------------------
-
-.. automodule:: university_connect.urls
    :members:
    :undoc-members:
    :show-inheritance:
