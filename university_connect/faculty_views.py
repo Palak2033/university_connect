@@ -602,6 +602,7 @@ def faculty_update_attendance(request):
 @csrf_exempt
 def get_attendance_dates(request):
     """Gets subject wise attendance data
+
     Parameters
     ----------
     request : django.http.HttpRequest
@@ -645,6 +646,7 @@ def get_attendance_dates(request):
 @csrf_exempt
 def get_attendance_student(request):
     """Gets students-wise attendance data
+
     Parameters
     ----------
     request : django.http.HttpRequest

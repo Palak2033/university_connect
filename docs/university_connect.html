@@ -181,25 +181,8 @@
         <article role="main">
           <section id="university-connect-package">
 <h1>university_connect package<a class="headerlink" href="#university-connect-package" title="Permalink to this headline">¶</a></h1>
-<section id="subpackages">
-<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-</div>
-</section>
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-</section>
-<section id="module-university_connect.admin">
-<span id="university-connect-admin-module"></span><h2>university_connect.admin module<a class="headerlink" href="#module-university_connect.admin" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="university_connect.admin.UserModel">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">university_connect.admin.</span></span><span class="sig-name descname"><span class="pre">UserModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/university_connect/admin.html#UserModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#university_connect.admin.UserModel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.contrib.auth.admin.UserAdmin</span></code></p>
-<dl class="py property">
-<dt class="sig sig-object py" id="university_connect.admin.UserModel.media">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#university_connect.admin.UserModel.media" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-</dd></dl>
 </section>
 <section id="module-university_connect.admin_views">
 <span id="university-connect-admin-views-module"></span><h2>university_connect.admin_views module<a class="headerlink" href="#module-university_connect.admin_views" title="Permalink to this headline">¶</a></h2>
@@ -813,18 +796,6 @@
 </dl>
 </dd></dl>
 </section>
-<section id="module-university_connect.apps">
-<span id="university-connect-apps-module"></span><h2>university_connect.apps module<a class="headerlink" href="#module-university_connect.apps" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="university_connect.apps.UniversityConnectAppConfig">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">university_connect.apps.</span></span><span class="sig-name descname"><span class="pre">UniversityConnectAppConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/university_connect/apps.html#UniversityConnectAppConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#university_connect.apps.UniversityConnectAppConfig" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.apps.config.AppConfig</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="university_connect.apps.UniversityConnectAppConfig.name">
-<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'university_connect'</span></em><a class="headerlink" href="#university_connect.apps.UniversityConnectAppConfig.name" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-</dd></dl>
-</section>
 <section id="module-university_connect.common_views">
 <span id="university-connect-common-views-module"></span><h2>university_connect.common_views module<a class="headerlink" href="#module-university_connect.common_views" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
@@ -1112,13 +1083,11 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="university_connect.faculty_views.get_attendance_dates">
 <span class="sig-prename descclassname"><span class="pre">university_connect.faculty_views.</span></span><span class="sig-name descname"><span class="pre">get_attendance_dates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/university_connect/faculty_views.html#get_attendance_dates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#university_connect.faculty_views.get_attendance_dates" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets subject wise attendance data
-Parameters
-———-
-request : django.http.HttpRequest</p>
-<blockquote>
-<div><p>Client request object. Comes from a HTML template or other function.</p>
-</div></blockquote>
+<dd><p>Gets subject wise attendance data</p>
+<dl class="simple">
+<dt>request<span class="classifier">django.http.HttpRequest</span></dt><dd><p>Client request object. Comes from a HTML template or other function.</p>
+</dd>
+</dl>
 <dl class="simple">
 <dt>response<span class="classifier">django.http.JsonResponse</span></dt><dd><p>Client response object. Goes to a JSON template.</p>
 </dd>
@@ -1127,13 +1096,11 @@ request : django.http.HttpRequest</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="university_connect.faculty_views.get_attendance_student">
 <span class="sig-prename descclassname"><span class="pre">university_connect.faculty_views.</span></span><span class="sig-name descname"><span class="pre">get_attendance_student</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/university_connect/faculty_views.html#get_attendance_student"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#university_connect.faculty_views.get_attendance_student" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets students-wise attendance data
-Parameters
-———-
-request : django.http.HttpRequest</p>
-<blockquote>
-<div><p>Client request object. Comes from a HTML template or other function.</p>
-</div></blockquote>
+<dd><p>Gets students-wise attendance data</p>
+<dl class="simple">
+<dt>request<span class="classifier">django.http.HttpRequest</span></dt><dd><p>Client request object. Comes from a HTML template or other function.</p>
+</dd>
+</dl>
 <dl class="simple">
 <dt>response<span class="classifier">django.http.JsonResponse</span></dt><dd><p>Client response object. Goes to a JSON template.</p>
 </dd>
@@ -3196,9 +3163,6 @@ object the first time, the query is executed.</p>
 </dl>
 </dd></dl>
 </section>
-<section id="module-university_connect.urls">
-<span id="university-connect-urls-module"></span><h2>university_connect.urls module<a class="headerlink" href="#module-university_connect.urls" title="Permalink to this headline">¶</a></h2>
-</section>
 <section id="module-university_connect.views">
 <span id="university-connect-views-module"></span><h2>university_connect.views module<a class="headerlink" href="#module-university_connect.views" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
@@ -3261,11 +3225,8 @@ object the first time, the query is executed.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">university_connect package</a><ul>
-<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-university_connect.admin">university_connect.admin module</a></li>
 <li><a class="reference internal" href="#module-university_connect.admin_views">university_connect.admin_views module</a></li>
-<li><a class="reference internal" href="#module-university_connect.apps">university_connect.apps module</a></li>
 <li><a class="reference internal" href="#module-university_connect.common_views">university_connect.common_views module</a></li>
 <li><a class="reference internal" href="#module-university_connect.email_backend">university_connect.email_backend module</a></li>
 <li><a class="reference internal" href="#module-university_connect.faculty_views">university_connect.faculty_views module</a></li>
@@ -3273,7 +3234,6 @@ object the first time, the query is executed.</p>
 <li><a class="reference internal" href="#module-university_connect.login_check_middleware">university_connect.login_check_middleware module</a></li>
 <li><a class="reference internal" href="#module-university_connect.models">university_connect.models module</a></li>
 <li><a class="reference internal" href="#module-university_connect.student_views">university_connect.student_views module</a></li>
-<li><a class="reference internal" href="#module-university_connect.urls">university_connect.urls module</a></li>
 <li><a class="reference internal" href="#module-university_connect.views">university_connect.views module</a></li>
 <li><a class="reference internal" href="#module-university_connect">Module contents</a></li>
 </ul>
