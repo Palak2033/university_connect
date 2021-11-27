@@ -13,14 +13,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "1234"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-<<<<<<< Updated upstream
-DEBUG = True
-ALLOWED_HOSTS = ["*"]
-=======
 DEBUG = False
 ALLOWED_HOSTS = ["localhost", "https://university-connect-portal.herokuapp.com/"]
-# ALLOWED_HOSTS = ["*"]
->>>>>>> Stashed changes
+
 
 # Application definition
 
@@ -112,14 +107,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = "/static/"
-<<<<<<< Updated upstream
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-=======
->>>>>>> Stashed changes
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -130,8 +121,6 @@ AUTH_USER_MODEL = "university_connect.BaseUser"
 
 # Registering Custom Backend "EmailBackEnd"
 AUTHENTICATION_BACKENDS = ["university_connect.email_backend.EmailBackend"]
-<<<<<<< Updated upstream
-=======
 
 django_heroku.settings(locals())
 
@@ -167,4 +156,3 @@ LOGGING = {
         },
     }
 }
->>>>>>> Stashed changes

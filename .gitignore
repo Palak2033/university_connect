@@ -1,3 +1,6 @@
 # Pycache files
 *.pyc
 */__pycache__/
+
+# Static files
+staticfiles/
