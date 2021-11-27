@@ -34,6 +34,9 @@ python manage.py runserver
 
 The website should open up in http://localhost:8000/ or http://127.0.0.1:8000/
 
+## Documentation:
+Sphinx documentation: https://palak2033.github.io/university_connect/
+
 ## Login Instructions
 The main admin user is "admin@uconnect.com" and the password is "admin".
 There are also faculty, faculty2, faculty3, student, student2, student3 each with the email "{username}@uconnect.com" and password "{username}" respectively.
