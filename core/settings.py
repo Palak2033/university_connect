@@ -1,5 +1,4 @@
 import os
-import django_heroku
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -13,8 +12,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "1234"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-ALLOWED_HOSTS = ["localhost", "https://university-connect-portal.herokuapp.com/"]
+DEBUG = True
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -121,9 +120,6 @@ AUTH_USER_MODEL = "university_connect.BaseUser"
 
 # Registering Custom Backend "EmailBackEnd"
 AUTHENTICATION_BACKENDS = ["university_connect.email_backend.EmailBackend"]
-
-# Heroku Setup
-django_heroku.settings(locals())
 
 # # Production Troubleshooting
 # LOGGING = {
