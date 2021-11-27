@@ -35,6 +35,7 @@ python manage.py runserver
 The website should open up in http://localhost:8000/ or http://127.0.0.1:8000/
 
 ## Documentation:
+Source code for documentation can be found in the docs branch.
 Sphinx documentation: https://palak2033.github.io/university_connect/
 
 ## Login Instructions
