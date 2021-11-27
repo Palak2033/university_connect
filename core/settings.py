@@ -1,4 +1,6 @@
 import os
+import django_heroku
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -11,8 +13,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "1234"
 
 # SECURITY WARNING: don't run with debug turned on in production!
+<<<<<<< Updated upstream
 DEBUG = True
 ALLOWED_HOSTS = ["*"]
+=======
+DEBUG = False
+ALLOWED_HOSTS = ["localhost", "https://university-connect-portal.herokuapp.com/"]
+# ALLOWED_HOSTS = ["*"]
+>>>>>>> Stashed changes
 
 # Application definition
 
@@ -56,7 +64,7 @@ TEMPLATES = [
     },
 ]
 
-# WSGI_APPLICATION = "core.wsgi.application"
+WSGI_APPLICATION = "core.wsgi.application"
 
 
 # Database
@@ -104,10 +112,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = "/static/"
+<<<<<<< Updated upstream
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+=======
+>>>>>>> Stashed changes
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -118,3 +130,41 @@ AUTH_USER_MODEL = "university_connect.BaseUser"
 
 # Registering Custom Backend "EmailBackEnd"
 AUTHENTICATION_BACKENDS = ["university_connect.email_backend.EmailBackend"]
+<<<<<<< Updated upstream
+=======
+
+django_heroku.settings(locals())
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format' : "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
+            'datefmt' : "%d/%b/%Y %H:%M:%S"
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'mysite.log',
+            'formatter': 'verbose'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers':['file'],
+            'propagate': True,
+            'level':'DEBUG',
+        },
+        'university_connect': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+        },
+    }
+}
+>>>>>>> Stashed changes
