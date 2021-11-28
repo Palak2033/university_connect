@@ -286,7 +286,7 @@ class Feedback(models.Model):
         Foreign key of the corresponding user in the BaseUser table.
     feedback : str
         Feedback message
-    feedback_reply : int
+    feedback_reply : str
         Feedback reply
     created_at : datetime.datetime
         Datetime at which the object was created at 

@@ -43,6 +43,37 @@
         <div class="container-fluid">
 
             <div class="row">
+                <div class="col-lg-3 col-6">
+                {% for attendance_report in attendance_reports %}
+                    {% if attendance_report.status == True %}
+                            <div class="small-box bg-success">
+                                <b>Date : {{ attendance_report.attendance_id.attendance_date }}</b> <br/>
+                                <b>[ Status : Present ]</b>
+                            </div>
+                    {% else %}
+
+                            <div class="small-box bg-danger">
+                                <b>Date : {{ attendance_report.attendance_id.attendance_date }}</b> <br/>
+                                <b>[ Status : Absent ]</b>
+                            </div>
+                    {% endif %}
+                </div>
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>{{ total_attendance }}</h3>
+
+                            <p>Total Attendance</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
                 <div class="col-md-12">
                     <!-- general form elements -->
                     <div class="card card-primary">

@@ -137,7 +137,7 @@
                 //console.log(semester_id)
 
                 $.ajax({
-                    url:'{% url 'get_attendance_dates' %}',
+                    url:'{% url "get_attendance_dates" %}',
                     type:'POST',
                     data:{subject:subject, semester_id:semester_id},
                 })
@@ -273,7 +273,7 @@
                 // Saving Attendance Data into Database
 
                 $.ajax({
-                    url:'{% url 'update_attendance_data' %}',
+                    url:'{% url "update_attendance_data" %}',
                     type:'POST',
                     data:{student_ids:student_data, attendance_date:attendance_date},
                 })
