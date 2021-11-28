@@ -43,11 +43,13 @@ python manage.py runserver
 Alternatively, if you use heroku, then you can do:
 ```
 git checkout stable
+python manage.py collectstatic
 heroku local
 ```
 for Linux and for Windows:
 ```
 git checkout stable
+python manage.py collectstatic
 heroku local -f Procfile.windows
 ```
 
