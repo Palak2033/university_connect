@@ -62,16 +62,11 @@ The website should open up in http://localhost:5000/
 
 ## Login Instructions
 The main admin user is "admin@uconnect.com" and the password is "admin".
-There are also faculty, faculty2, faculty3, student, student2, student3 each with the email "{username}@uconnect.com" and password "{username}" respectively.
+There are also faculty, faculty1, faculty2, student, student1, student2 and so on each with the email "{username}@uconnect.com" and password "{username}" respectively.
 
-The full list of login details is attached in Logins.md
+The full list of user details is attached in [Logins.md](Logins.md)
 
 Django also you to create a new super user using
 ```
 python manage.py createsuperuser
 ```
-
-## Features
-- Admin:
-- Faculty:
-- Student:
