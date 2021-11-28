@@ -14,6 +14,8 @@ Limitations:
 ## Documentation:
 Source code for documentation can be found in the docs branch.
 Sphinx documentation: https://palak2033.github.io/university_connect/
+Slides-wise Documentation: https://1drv.ms/b/s!Aj-DX0zL7xXNc6jcad9hnabjrTE
+
 
 ## Installing and Running locally
 To run the code, you can clone or download this repository:
