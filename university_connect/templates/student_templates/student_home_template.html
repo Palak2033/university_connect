@@ -90,6 +90,7 @@
                         {% for row in announcements %}
                             {% include 'student_templates/announcement_template.html' with row=row unread=True non_empty=non_empty %}
                         {% endfor %}
+                        <a href="{% url 'student_announcement' %}" style="text-align: right;">View All <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                     <!-- /.card -->
 
