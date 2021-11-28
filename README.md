@@ -1,6 +1,9 @@
 # University Connect
 
-University Connect is an ERP (Enterprise Resource Planning) platform written in Django for the backend and SQLite3 for database management. Bootstrap templates and jQuery have been used for the frontend.
+**University Connect** is an ERP (Enterprise Resource Planning) platform written in Django for the backend and SQLite3 for database management. Bootstrap templates and jQuery have been used for the frontend. This was made for **Microsoft Engage FTE 2021**. I sincerely thank Microsoft for providing me this valuable opportunity to learn and apply my skills through this project.
+
+## Video Demo
+The 4-minute video demo for this project has been uploaded at https://vimeo.com/650817481 
 
 ## Deployment:
 The website is automatically deployed to Heroku at https://university-connect-portal.herokuapp.com/ from the stable branch.
