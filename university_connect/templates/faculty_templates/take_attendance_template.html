@@ -158,7 +158,7 @@
                 // Saving Attendance Data into Database
 
                 $.ajax({
-                    url:'{% url 'save_attendance_data' %}',
+                    url:'{% url "save_attendance_data" %}',
                     type:'POST',
                     data:{student_ids:student_data, attendance_date:attendance_date, subject_id:subject_id, semester_id:semester_id},
                 })

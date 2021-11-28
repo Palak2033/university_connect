@@ -4,3 +4,6 @@
 
 # Documentation
 docsrc/_build/
+
+# Static files
+staticfiles/

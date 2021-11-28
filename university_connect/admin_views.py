@@ -91,7 +91,7 @@ def admin_home(request):
         student_name_list.append(student.admin.first_name)
 
     # Feedbacks
-    feedbacks = Feedback.objects.order_by("-id")[:5]
+    feedbacks = Feedback.objects.filter(feedback_reply="").order_by("-id")[:5]
 
     context = {
         "all_student_count": all_student_count,
