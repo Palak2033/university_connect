@@ -272,7 +272,7 @@
         <span class="n">student_name_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">student</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">first_name</span><span class="p">)</span>
 
     <span class="c1"># Feedbacks</span>
-    <span class="n">feedbacks</span> <span class="o">=</span> <span class="n">Feedback</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s2">"-id"</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]</span>
+    <span class="n">feedbacks</span> <span class="o">=</span> <span class="n">Feedback</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">feedback_reply</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s2">"-id"</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]</span>
 
     <span class="n">context</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s2">"all_student_count"</span><span class="p">:</span> <span class="n">all_student_count</span><span class="p">,</span>
