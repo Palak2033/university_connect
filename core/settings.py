@@ -121,6 +121,8 @@ AUTH_USER_MODEL = "university_connect.BaseUser"
 # Registering Custom Backend "EmailBackEnd"
 AUTHENTICATION_BACKENDS = ["university_connect.email_backend.EmailBackend"]
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 # # Production Troubleshooting
 # LOGGING = {
 #     'version': 1,
