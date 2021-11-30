@@ -69,7 +69,7 @@ The website should open up in http://localhost:5000/
 
 ## Login Instructions
 The main admin user is "admin@uconnect.com" and the password is "admin".
-There are also faculty, faculty1, faculty2, student, student1, student2 and so on each with the email "{username}@uconnect.com" and password "{username}" respectively.
+There are also faculty, faculty1, faculty2, student, student1, student3 and so on each with the email "{username}@uconnect.com" and password "{username}" respectively.
 
 The full list of user details is attached in [Logins.md](Logins.md)
 
