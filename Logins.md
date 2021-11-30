@@ -10,7 +10,6 @@
 | faculty4@uconnect.com       | faculty4      |  
 | student@uconnect.com        | student       |
 | student1@uconnect.com       | student1      |  
-| student2@uconnect.com       | student2      |  
 | student3@uconnect.com       | student3      |  
 | student4@uconnect.com       | student4      |  
 | student5@uconnect.com       | student5      |  
