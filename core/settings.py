@@ -125,6 +125,9 @@ AUTHENTICATION_BACKENDS = ["university_connect.email_backend.EmailBackend"]
 # Heroku Setup
 django_heroku.settings(locals())
 
+# Default Auto Field
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 # # Production Troubleshooting
 # LOGGING = {
 #     'version': 1,

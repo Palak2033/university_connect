@@ -1,16 +1,25 @@
 # University Connect
 
-University Connect is a Learning Management System written in Django for the backend and SQLite3 is used for database management. Bootstrap templates and jQuery have been used for the frontend.
+**University Connect** is an ERP (Enterprise Resource Planning) platform written in Django for the backend and SQLite3 for database management. Bootstrap templates and jQuery have been used for the frontend. This was made for **Microsoft Engage FTE 2021**. I sincerely thank Microsoft for providing me this valuable opportunity to learn and apply my skills through this project.
 
-The website is deployed on Heroku at: https://university-connect-portal.herokuapp.com/
+## Video Demo
+The 4-minute video demo for this project has been uploaded at https://vimeo.com/650817481 
 
-The documentation for the codebase is deployed at: https://palak2033.github.io/university_connect/
+## Deployment:
+The website is automatically deployed to Heroku at https://university-connect-portal.herokuapp.com/ from the stable branch.
+Limitations:
+- Time is set to UTC and not IST as Heroku deploys on a US-based server
+- Uploaded documents will not be accessible as that requires a cloud-service to be connected. Heroku requires credit-card verification for this which I haven't done.
 
-The production code is kept in the stable branch while the documentation code is kept in the docs branch.
+## Documentation:
+Source code for documentation can be found in the docs branch.
 
-In order to run the code locally, you can follow the following steps.
+Sphinx documentation: https://palak2033.github.io/university_connect/
 
-## Installing and Deploying
+Slides-wise Documentation: https://1drv.ms/b/s!Aj-DX0zL7xXNc6jcad9hnabjrTE
+
+
+## Installing and Running locally
 To run the code, you can clone or download this repository:
 ```
 git clone https://github.com/Palak2033/university_connect.git
@@ -26,6 +35,8 @@ conda install pip
 pip install -r requirements.txt
 
 # Using virtualenv
+virtualenv env_name
+source env_name/bin/activate
 pip install -r requirements.txt
 ```
 
@@ -40,33 +51,29 @@ To locally deploy the website, you can run
 python manage.py runserver
 ```
 
+The website should open up in http://localhost:8000/ or http://127.0.0.1:8000/
+
 Alternatively, if you use heroku, then you can do:
 ```
 git checkout stable
+python manage.py collectstatic
 heroku local
 ```
 for Linux and for Windows:
 ```
 git checkout stable
+python manage.py collectstatic
 heroku local -f Procfile.windows
 ```
-
-Either way, the website should open up in http://localhost:8000/ or http://127.0.0.1:8000/
-
-## Documentation:
-Source code for documentation can be found in the docs branch.
-Sphinx documentation: https://palak2033.github.io/university_connect/
+The website should open up in http://localhost:5000/
 
 ## Login Instructions
 The main admin user is "admin@uconnect.com" and the password is "admin".
-There are also faculty, faculty2, faculty3, student, student2, student3 each with the email "{username}@uconnect.com" and password "{username}" respectively.
+There are also faculty, faculty1, faculty2, student, student1, student3 and so on each with the email "{username}@uconnect.com" and password "{username}" respectively.
+
+The full list of user details is attached in [Logins.md](Logins.md)
 
 Django also you to create a new super user using
 ```
 python manage.py createsuperuser
 ```
-
-## Features
-- Admin:
-- Faculty:
-- Student:
